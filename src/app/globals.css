@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a1628;
+  --foreground: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  background: #0a1628 !important;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(10, 22, 40, 0.9) !important;
+  color: #00d4ff !important;
+  border-color: rgba(0, 212, 255, 0.15) !important;
+  backdrop-filter: blur(12px);
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(10, 22, 40, 1) !important;
+  color: #fff !important;
+}
+
+.leaflet-tooltip {
+  background: rgba(10, 22, 40, 0.95) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 6px 10px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(12px);
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: rgba(0, 212, 255, 0.2) !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Date input styling for dark theme */
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
